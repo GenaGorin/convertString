@@ -38,7 +38,7 @@ function checkResult($string){
         if ($string[$i] == '{') {
             $fig++;
         }
-        if ($string[$i]== '{') {
+        if ($string[$i]== '}') {
             $fig--;
         }
 
@@ -47,6 +47,10 @@ function checkResult($string){
         }
         if ($string[$i]== ']') {
             $square--;
+        }
+
+        if ($round < 0 OR $fig < 0 OR $square < 0) {
+            return false;
         }
     }
 
